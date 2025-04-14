@@ -16,22 +16,6 @@ An AI-powered web application that transforms lecture audio into concise summari
 - 🔊 **Text-to-Speech**: Summary and quiz can be played using Amazon Polly.
 - 🌐 **Clean UI**: Simple and intuitive frontend for interaction.
 
----
-
-## 🗂️ Project Structure
-
-```
-intelligent-study-buddy/
-└── app.py (Flask API)
-└── requirements.txt
-└── lambda/
-    └── studyBuddyProcessor.py
-    └── StudyBuddyPostProcessor.py
-/static
-  └── index.html
-  └── style.css
-  └── script.js 
-```
 
 ---
 
@@ -77,20 +61,11 @@ intelligent-study-buddy/
 
 ### Local Setup:
 ```bash
-git clone https://github.com/your-username/intelligent-study-buddy.git
-cd intelligent-study-buddy
+git clone https://github.com/raufur-simanto/Intelligent-Study-Buddy
+cd Intelligent-Study-Buddy
 python app.py
 ```
 
-- Set environment variables for AWS and Google credentials as needed.
-
----
-
-## 📸 Screenshots
-
-| Upload Audio | Summary | Quiz |
-|--------------|---------|------|
-| ![](screenshots/upload.png) | ![](screenshots/summary.png) | ![](screenshots/quiz.png) |
 
 ---
 

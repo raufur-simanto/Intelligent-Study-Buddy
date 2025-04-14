@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intelligent Study Buddy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #4CAF50;
+            --primary-hover: #45a049;
+            --background: #f4f7fc;
+            --text: #2d3e50;
+            --card-bg: #ffffff;
+            --border-radius: 12px;
+            --shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--background);
+            margin: 0;
+            padding: 40px 20px;
+            color: var(--text);
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+        }
+
+        .container {
+            background-color: var(--card-bg);
+            padding: 30px 40px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            max-width: 700px;
+            width: 100%;
+        }
+
+        h1 {
+            margin-top: 0;
+            font-size: 28px;
+            text-align: center;
+            color: var(--text);
+        }
+
+        button {
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            margin: 8px 5px;
+            font-size: 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: var(--primary-hover);
+        }
+
+        input[type="file"] {
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        #status {
+            margin-top: 20px;
+            font-weight: 500;
+            font-size: 16px;
+            color: #444;
+            text-align: center;
+        }
+
+        #actions {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        #output {
+            margin-top: 30px;
+        }
+
+        #summarySection, #quizSection {
+            margin-bottom: 20px;
+            padding: 20px;
+            background-color: #f9fafc;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+
+        h3 {
+            margin-top: 0;
+            font-size: 20px;
+            color: var(--text);
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        ul li {
+            margin-bottom: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Intelligent Study Buddy</h1>
+
+        <label for="audioFile"><strong>Select a lecture audio file:</strong></label>
+        <input type="file" id="audioFile" accept="audio/*">
+        <button onclick="uploadFile()">Upload</button>
+
+        <div id="status"></div>
+
+        <div id="actions" class="hidden">
+            <button onclick="getSummary()">Get Summary</button>
+            <button onclick="getQuiz()">Generate Quiz</button>
+            <button onclick="playSummaryAudio()">Listen to Summary</button>
+            <button onclick="playQuizAudio()">Listen to Quiz</button>
+            <button onclick="stopAudio()">Stop Audio</button>
+        </div>
+
+        <div id="output" class="hidden">
+            <div id="summarySection">
+                <h3>Summary</h3>
+                <div id="summaryText"></div>
+            </div>
+            <div id="quizSection">
+                <h3>Quiz Questions</h3>
+                <ul id="quizList"></ul>
+            </div>
+        </div>
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>
